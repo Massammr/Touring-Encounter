@@ -4,6 +4,8 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\UsersController;
+use App\Http\Controllers\FollowerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +26,10 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+Route::controller(UsersController::class)->middleware(['auth'])->group(function(){
+    Route::get('/follow/index', 'index')->name('follow');
+});
+
 Route::controller(PostController::class)->middleware(['auth'])->group(function(){
     Route::get('/', 'index')->name('index');
     Route::post('/posts', 'store')->name('store');
@@ -41,6 +47,11 @@ Route::controller(CommentController::class)->middleware(['auth'])->group(functio
    
     
 });
+Route::controller(FollowerController::class)->middleware(['auth'])->group(function(){
+    Route::post('/follow/{userId}','store')->name('store');
+});
+   
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

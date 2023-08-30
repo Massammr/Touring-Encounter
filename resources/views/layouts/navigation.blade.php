@@ -4,19 +4,20 @@
         <div class="flex justify-between h-16">
             <div class="flex">
                 <!-- Logo -->
-                <div class="shrink-0 flex items-center">
-                    <a href="{{ route('dashboard') }}">
-                        <x-application-logo class="block h-9 w-auto fill-current text-gray-800" />
+                <div class="flex items-center">
+                    <a href="{{ route('index') }}">
+                        <img src="{{ asset('images/Touring_Encounter.JPG') }}"  {{ $attributes }} class="block h-9 w-auto fill-current ">
                     </a>
                 </div>
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                  <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-    {{ __('Dashboard') }}
+                    <!--テイルぅいんどうずcss-->
+                  <x-nav-link :href="route('index')" :active="request()->routeIs('index')">
+    {{ __('投稿一覧') }}
 </x-nav-link>
-<x-nav-link :href="route('index')" :active="request()->routeIs('index')">
-    {{ __('Index') }}
+<x-nav-link :href="route('follow')" :active="request()->routeIs('follow')">
+    {{ __('フォロワー') }}
 </x-nav-link>
 
                 </div>

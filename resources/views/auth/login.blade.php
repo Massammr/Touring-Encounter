@@ -1,3 +1,15 @@
+<!DOCTYPE HTML>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+    <head>
+        <meta charset="utf-8">
+        <title>Login</title>
+    </head>
+    <body>
+       <div style='background-color: #343434; display: flex; align-items: center; height: 80px;'>
+    <a href="{{ route('register') }}" style="margin-left: auto; color: white; ">
+        <p style='width: 90px; padding: 5px; text-align: center;'>新規登録</p>
+    </a>
+</div>
 <x-guest-layout>
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
@@ -45,3 +57,6 @@
         </div>
     </form>
 </x-guest-layout>
+ </body>
+    
+</html>
