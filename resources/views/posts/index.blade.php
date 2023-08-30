@@ -8,7 +8,7 @@
     </head>
     <body>
          <x-app-layout>
-    <x-slot name="header">
+    <x-slot name='header'>
         　投稿一覧
         　   </x-slot>
         <h1 style='font-size:2em;'>Blog Name</h1>

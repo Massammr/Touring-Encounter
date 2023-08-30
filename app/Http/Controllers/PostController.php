@@ -20,7 +20,7 @@ class PostController extends Controller
     //$postの中身を戻り値にする。
 }
 
- public function show(Post $post, Comment $comment, Image $image)
+ public function show(User $user,Post $post, Comment $comment, Image $image)
     {
         // dd($post->images()->get());
         // $image_get = Image::where('post_id', '=', $post->id)->get();
@@ -47,7 +47,7 @@ public function store(PostRequest $request, Post $post , Image $image)
         $image->image_url = $image_url;
      $image->post_id = $post->id;
     $image->save();
-    //  dd($image);
+    //  dd($image);　　ファイルの数が５つ以上だと投稿拒否
             }
     }
     

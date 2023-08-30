@@ -1,3 +1,8 @@
+<header>
+    <button class="inline-flex text-white items-center bg-emerald-500 border-0 py-1 px-3 mx-2 focus:outline-none hover:bg-emerald-400 rounded text-base mt-4 md:mt-0">
+        <a href="{{ route('register') }}">新規登録</a>
+      </button>
+</header>
 <x-guest-layout>
     <form method="POST" action="{{ route('register') }}">
         @csrf
